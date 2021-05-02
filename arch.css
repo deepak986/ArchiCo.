@@ -1,0 +1,855 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Tammudu+2&family=Julius+Sans+One&family=Roboto:ital,wght@1,300&family=Sriracha&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Tammudu+2&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Unicase:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+body{
+    background: linear-gradient(to right, #ffefba, #ffffff); 
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+nav video{
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+nav {
+    width: 100%;
+    height: 120vh;
+    position: static;
+    z-index: 1;
+}
+
+
+nav #brand {
+    float: left;
+    display: block;
+    margin-left: 84px;
+    font-size: 22px;
+    font-weight: 200;
+    letter-spacing: .1rem;
+    font-family: 'Sriracha', cursive;
+    line-height: 70px;
+}
+
+
+
+nav #menu {
+    float: left;
+    left: 45%;
+    position: relative;
+}
+
+nav #menu li {
+    display: inline-block;
+    padding: 0px 32px;
+    cursor: pointer;
+    line-height: 80px;
+    position: relative;
+    transition: all 0.3s ease-out;
+}
+
+nav #menu li a {
+    color: #fff;
+    font-size: 20px;
+    font-family: 'Baloo Tammudu 2', cursive;
+    letter-spacing: .1rem;
+    font-weight: 200;
+}
+
+
+#toggle {
+    position: absolute;
+    right: 20px;
+    top: 14px;
+    z-index: 999;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    float: right;
+    transition: all 0.3s ease-out;
+    visibility: hidden;
+    opacity: 0;
+}
+
+#toggle .span {
+    height: 3px;
+    background: #fff;
+    transition: all 0.3s ease-out;
+    backface-visibility: hidden;
+    margin: 5px auto;
+}
+
+#toggle.on #one {
+    transform: rotate(45deg) translateX(2px) translateY(4px);
+}
+
+#toggle.on #two {
+    opacity: 0;
+}
+
+#toggle.on #three {
+    transform: rotate(-45deg) translateX(8px) translateY(-10px);
+}
+
+#resize {
+    z-index: 1;
+    top: 0px;
+    position: absolute;
+    background: #000;
+    width: 100%;
+    height: 100%;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 1s ease-out;
+    display: table;
+}
+
+#resize #menu {
+    height: 90px;
+    display: table-cell;
+    vertical-align: center;
+}
+
+#resize #menu li {
+    display: block;
+    text-align: center;
+    padding: 70px 0;
+    min-height: 50px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease-out;
+}
+
+#resize li:nth-child(1) {
+    margin-top: 10px;
+}
+
+#resize #menu li a {
+    color: #fff;
+    font-size: 30px;
+}
+
+#resize.active {
+    visibility: visible;
+    opacity: 0.99;
+}
+
+.context {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+.context h2 {
+    color: #fff;
+    font-family: 'Dancing Script', cursive;
+    font-weight: 200;
+    font-size: 150px;
+}
+.context h3 {
+    color: #fff;
+    font-family: 'Baloo Tammudu 2', cursive;
+    font-weight: 200;
+    font-size: 40px;
+}
+.ptn{
+    color: white;
+    font-size: 18px;
+    letter-spacing: .2rem;
+    background-color: transparent;
+    font-family: 'Roboto', sans-serif;
+    padding: .6rem 2rem;
+    border: 1px solid white;
+    cursor: pointer;
+}
+
+.modern-container{
+    width: 100%;
+}
+.modern-container h2{
+    font-size: 45px;
+    margin-left: 5%;
+    width: 45%;
+    margin-bottom: 100px;
+    border-bottom: 1px solid black;
+    letter-spacing: .1rem;
+    font-family: 'Shippori Mincho', serif;
+}
+.modern-containerr{
+    display: flex;
+}
+.modern-right{
+    flex-basis: 45%;
+    padding: 4rem;
+}
+.modern-left{
+    flex-basis: 55%;
+    margin-top: 10%;
+}
+.modern-left h3{
+    color: black;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    padding: 2rem;
+    line-height: 2rem;
+    width: 540px;
+}
+
+.modern-left img{
+    padding: 2rem;
+}
+
+.design-container{
+    width: 100%;
+    padding: 15% 0%;
+}
+.row {
+    margin-left: 60%;
+    display: -ms-flexbox; 
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    padding: 0px 4px;
+}
+  
+.column {
+    margin-left: -20%;
+    -ms-flex: 25%;
+    flex: 25%;
+    max-width: 36%;
+    padding: 0 0px;
+}
+.column h1{
+    margin-top: -340%;
+    margin-left: -280%;
+    font-family: 'Playfair Display', serif;
+    font-size: 100px;
+    width: 420%;
+}
+.one{
+    width: 250%;
+}
+.two{
+    width: 100%;
+    margin-top: 200%;
+    margin-left: -100%;
+}
+.three{
+    width: 100%;
+    margin-top: 20%;
+    margin-left: 80%;
+}
+
+.about-container{
+    width: 100%;
+    padding: 5% 0%;
+}
+.about-container h1{
+    font-size: 45px;
+    margin-left: 6.5%;
+    width: 15%;
+    margin-bottom: 100px;
+    letter-spacing: .1rem;
+    font-family: 'Shippori Mincho', serif;
+    border-bottom: 1px solid black;
+}
+
+.about-containerr{
+    display: flex;
+}
+.about-right{
+    flex-basis: 50%;
+    padding: 4rem;
+}
+.about-left{
+    flex-basis: 50%;
+}
+.about-right h2{
+    color: black;
+    font-family: 'Roboto', sans-serif;
+    font-size: 22px;
+    padding: 2rem;
+    line-height: 2.2rem;
+    width: 540px;
+}
+
+.about-right img{
+    padding: 2rem;
+}
+
+.services-container{
+    max-width: 200%;
+    margin-left: 25%;
+}
+.services-heading{
+    margin-left: 6.5%;
+    font-family: 'Shippori Mincho', serif;
+    font-size: 50px;
+    width: 30%;
+    margin-bottom: 100px;
+    border-bottom: 1px solid black;
+}
+
+
+
+.service button{
+    width: 90%;
+    background-color: transparent;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    border:none;
+    outline: none;
+    font-size: 40px;
+    font-family: 'Cormorant Unicase', serif;
+    color: #321831;
+    font-weight: 700;
+    cursor: pointer;
+    border-bottom: 1px solid #321831;
+}
+
+.service button img{
+    margin-top: 1%;
+    transform: rotate(50deg);
+    transition: all 0.5s;
+}
+
+.service p{
+    background: transparent;
+    font-size: 22px;
+    max-height: 0;
+    opacity: 0;
+    line-height: 1.6;
+    overflow: hidden;
+    transition: all 0.5s;
+}
+
+.service p.show{
+    max-height: 200px; opacity: 1;
+    padding: 20px;
+}
+
+.service button img.rotate{
+    transform: rotate(220deg);
+}
+
+#horz{
+    padding: 8% 0%;
+}
+.horz-containerr{ 
+    width: 100%;
+    margin: 10px auto;
+    display: flex; 
+    align-items: center;
+}
+
+#horz h1{
+    font-size: 50px;
+    border-bottom: 1px solid black;
+    letter-spacing: .1rem;
+    margin-left: 6%;
+    width: 16%;
+    margin-bottom: 100px;
+    font-family: 'Shippori Mincho', serif;
+}
+.horzs {
+    margin-left: 0.5%;
+    position: relative;
+    display: flex;
+    overflow-x: auto;
+}
+
+.horzs img {   
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+
+.content {
+    width: 95%;
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    color: #fff;
+    line-height: 4rem;
+    font-family: 'Shippori Mincho', serif;
+    font-size: 40px;
+}
+.content span{
+    font-size: 28px;
+    display: block
+}
+.horz-fade {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+.horzs:hover .horz-fade {
+    cursor: pointer;
+    opacity: 1;
+}
+
+
+.footer-container{
+    width: 100%;
+    height: 60vh;
+    display: flex;
+}
+#footer h1{
+    border-bottom: 1px solid black;
+    margin-top: 10%;
+    width: 100%;
+}
+
+.footer-left, .footer-middle, .footer-right{
+    flex-basis: 50%;
+    padding: 6rem;
+}
+
+.footer-left .com{
+    font-size: 40px;
+    font-family: 'Dancing Script', cursive;
+    color: black;
+    line-height: 4rem;
+}
+.footer-left h2{
+    font-size: 20px;
+    letter-spacing: .1rem;
+    font-family: 'Open Sans', sans-serif;
+    color: #F4A460;
+    line-height: 4rem;
+}
+.footer-left ul{
+    display: flex;
+}
+
+.footer-left ul li a {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    display: block;
+    text-align: center;
+    margin: 0 10px;
+    border-radius: 50%;
+    padding: 6px;
+    border: 2px solid black;
+    box-sizing: border-box;
+    text-decoration: none;
+
+}
+  
+ul li a .fab {
+    display: block;
+    border-radius: 50%;
+    line-height: calc(35px - 10px);
+    font-size: 24px;
+    color: #262626;
+}
+.footer-left h3{
+    font-size: 22px;
+    letter-spacing: .1rem;
+    font-family: 'Shippori Mincho', serif;
+    color: #F4A460;
+    line-height: 4rem;
+}  
+.btn{
+    color: black;
+    font-size: 15px;
+    letter-spacing: .1rem;
+    background-color: transparent;
+    font-family: 'Roboto', sans-serif;
+    padding: .4rem .5rem;
+    border: 1px solid black;
+    cursor: pointer;  
+}
+ 
+.footer-middle h2{
+    font-size: 22px;
+    letter-spacing: .1rem;
+    font-family: 'Shippori Mincho', serif;
+    color: #F4A460;
+    line-height: 4rem;
+}
+.footer-middle h3{
+    font-size: 18px;
+    letter-spacing: .1rem;
+    font-family: 'Special Elite', cursive;
+    color: black;
+    line-height: 2.5rem;
+}
+
+.footer-right h2{
+    font-size: 22px;
+    letter-spacing: .1rem;
+    font-family: 'Shippori Mincho', serif;
+    color: #F4A460;
+    line-height: 4rem;
+}
+.footer-right h3{
+    font-size: 18px;
+    font-family: 'Special Elite', cursive;
+    color: black;
+}
+.footer-right h4{
+    font-size: 18px;
+    letter-spacing: .04rem;
+    line-height: 4rem;
+    font-family: 'Special Elite', cursive;
+    color: black;
+}
+
+@media(max-width: 768px) {
+    .context{
+        width: 80%;
+    }
+    .context h2{
+        font-size: 130px;
+    }
+    .context h3{
+        font-size: 30px;
+    } 
+
+    .modern-container h2{
+        margin-left: 5%;
+        font-size: 34px;
+    }
+    .modern-containerr{
+        display: block;
+    }
+    .modern-right{
+        padding: 2rem;
+    }
+    .modern-right img{
+        width: 100%;
+    }
+    .modern-left img{
+        width: 100%;
+    }
+    .modern-left h3{
+        width: 90%;
+        font-size: 25px;
+    }
+
+    .column {
+        margin-left: -110%;
+    }
+    .column h1{
+        margin-top: -600%;
+        margin-left: -100%;
+        font-size: 70px;
+        width: 500%;
+    }
+    .one{
+        width: 450%;
+    }
+    .two{
+        width: 150%;
+        margin-top: 400%;
+        margin-left: 130%;
+    }
+    .three{
+        width: 150%;
+        margin-top: 20%;
+        margin-left: 1000%;
+    }
+
+    .about-container h1{
+        font-size: 35px;
+        width: 25%;
+    }
+    .about-containerr{
+        display: block;
+    }
+    .about-right{
+        padding: 0rem;
+    }
+    .about-right img{
+        padding: 2rem;
+        width: 100%;
+    }
+    .about-right h2{
+        font-size: 25px;
+        padding: 3rem;
+        width: 100%;
+    }
+    .about-left img{
+        padding: 2rem;
+        width: 100%;
+    }
+    .services-heading{
+        font-size: 38px;
+    }
+    .services-container{
+        margin-left: 5%;
+    }
+    .service button{
+        font-size: 30px;
+    }
+    #horz h1{
+        font-size: 35px;
+    }
+    .horzs{
+        margin-left: 1%;
+    }
+    .content {
+        font-size: 25px;
+        line-height: 2.5rem;
+    }
+    .content span{
+        font-size: 20px;
+    }
+    .footer-container{
+        height: 40vh;
+    }
+    .footer-left, .footer-middle, .footer-right{
+        padding: 2rem;
+    }
+    .footer-left h3{
+        font-size: 17px;
+    }
+    .footer-middle h3{
+        font-size: 15px;
+    }
+    .footer-right h3{
+        font-size: 14px;
+    }
+}
+    @media(max-width: 1200px) {
+    #toggle {
+          visibility: visible;
+          opacity: 1;
+          margin-top: 6px;
+    }
+
+    nav #brand {
+          margin-left: 18px;
+    }
+
+    #menu a {
+          font-family: "Poppins";
+          font-weight: 200;
+          font-size: 20px;
+    }
+
+    nav #menu {
+          display: none;
+    }
+}
+
+@media(max-width: 1024px) {
+
+    .modern-container h2{
+        width: 68%;
+    }
+    .modern-right img{
+        width: 100%;
+    }
+    .modern-left img{
+        width: 100%;
+    }
+    .column {
+        margin-left: -110%;
+    }
+    .column h1{
+        margin-top: -600%;
+        margin-left: -100%;
+        font-size: 70px;
+        width: 500%;
+    }
+    .one{
+        width: 450%;
+    }
+    .two{
+        width: 150%;
+        margin-top: 400%;
+        margin-left: 130%;
+    }
+    .three{
+        width: 150%;
+        margin-top: 20%;
+        margin-left: 1000%;
+    }
+
+    .about-container h1{
+        width: 22%;
+    }
+    .about-right{
+        padding: 2rem;
+    }
+    .about-right img{
+        width: 100%;
+    }
+    .about-left img{
+        width: 100%;
+    }
+
+    .services-heading{
+        width: 45%;
+    }
+    .service button{
+        font-size: 20px;
+    }
+    #horz h1{
+        width: 25%;
+    }
+    .footer-left, .footer-middle, .footer-right{
+        padding: 2rem;
+    }
+}
+
+@media (max-width: 1500px){
+    .modern-container h2{
+        min-width: 48%;
+    }
+    .services-heading{
+        min-width: 32%;
+    }
+    #horz h1{
+        min-width: 18%;
+    }
+}
+
+
+@media (max-width:600px) {
+    nav #brand {
+        line-height: 80px;
+    }
+
+    .context h2{
+        font-size: 120px;
+    }
+    .context h3{
+        font-size: 20px;
+    }
+
+    .modern-container h2{
+        margin-left: 5%;
+        width: 90%;
+        font-size: 24px;
+    }
+    .modern-right{
+        padding: 2rem;
+    }
+    .modern-right img{
+        width: 100%;
+    }
+    .modern-left img{
+        width: 100%;
+    }
+    .modern-left h3{
+        font-size: 15px;
+        width: 90%;
+    }
+
+    .column {
+        margin-left: -110%;
+    }
+    .column h1{
+        margin-top: -650%;
+        margin-left: -80%;
+        font-size: 35px;
+        width: 420%;
+    }
+    .one{
+        width: 400%;
+    }
+    .two{
+        width: 120%;
+        margin-top: 400%;
+        margin-left: 150%;
+    }
+    .three{
+        width: 120%;
+        margin-top: 20%;
+        margin-left: 960%;
+    }
+
+    .about-container h1{
+        font-size: 30px;
+        width: 38%;
+    }
+    .about-right{
+        padding: 0rem;
+    }
+    .about-right img{
+        padding: 2rem;
+        width: 100%;
+    }
+    .about-right h2{
+        font-size: 15px;
+        padding: 1rem;
+        width: 100%;
+    }
+    .about-left img{
+        padding: 2rem;
+        width: 100%;
+    }
+    .services-heading{
+        font-size: 30px;
+        width: 65%;
+    }
+    .services-container{
+        margin-left: 5%;
+    }
+    .service button{
+        font-size: 14px;
+    }
+    #horz h1{
+        font-size: 30px;
+        width: 45%;
+    }
+    .horzs{
+        margin-left: 2%;
+    }
+    .content {
+        font-size: 14px;
+        line-height: 2rem;
+    }
+    .content span{
+        font-size: 12px;
+    }
+    .footer-container{
+        display: block;
+    }
+    .footer-left, .footer-middle, .footer-right{
+        padding: 2rem;
+    }
+    .footer-right h4{
+        font-size: 16px;
+    }
+}
